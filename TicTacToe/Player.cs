@@ -6,17 +6,11 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    class Player
+    abstract class Player
     {
-        public Player(string playerNick, Board board)
-        {
-            this.Board = board;
-            Nick = playerNick;
-            
-        }
         public char Sign;
         public string Nick;
-        private Board Board;
+        protected Board Board;
         public bool IfAdded = false;
         public bool IfWon = false;
         private int Score = 0;
@@ -154,7 +148,7 @@ namespace TicTacToe
                 }
             else
                 return this.IfAdded = false;
-                
+
 
 
         }
@@ -179,7 +173,6 @@ namespace TicTacToe
                 return this.IfWon = true;
             else
                 return this.IfWon = false;
-        }       
-
+        }
     }
 }

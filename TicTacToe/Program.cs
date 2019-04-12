@@ -18,11 +18,13 @@ namespace TicTacToe
             string nick1 = Console.ReadLine();
             Console.Write("Enter the secound player nick: ");
             string nick2 = Console.ReadLine();
-            Player gracz1 = new Player(nick1, plansza);
-            Player gracz2 = new Player(nick2, plansza);
+            RealPlayer gracz1 = new RealPlayer(nick1, plansza);
+            RealPlayer gracz2 = new RealPlayer(nick2, plansza);
 
             while(playOrNot != 'n')
             {
+                playOrNot = ' ';
+
                 Console.Clear();
                 Random rand = new Random((int)DateTime.Now.Ticks);
                 int los = rand.Next(2) + 1;
@@ -155,6 +157,7 @@ namespace TicTacToe
                     playOrNot = Console.ReadKey().KeyChar;
                 }
 
+                
                 //Console.ReadKey();
 
             }
